@@ -1,15 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  title: my-test-repo
-  name: bogus-name
-  description: Just a repo for testing
+  name: my-test-repo
+  annotations:
+    github.com/project-slug: hannavigil-test-org/my-test-repo
 spec:
-  type: website
-  lifecycle: production
-  owner: artist-relations-team
-  system: artist-engagement-portal
-  dependsOn:
-    - resource:default/artists-db
-  providesApis:
-    - artist-api
+  type: other
+  lifecycle: unknown
+  owner: hannavigil
