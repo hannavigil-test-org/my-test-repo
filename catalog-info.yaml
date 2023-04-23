@@ -1,7 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: my-test-repo
+  title: my-test-repo
+  name: some-bogus-name
   annotations:
     github.com/project-slug: hannavigil-test-org/my-test-repo
 spec:
