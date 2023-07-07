@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
-  title: My Test Repo
+  title: My Test Repo rename
   description: some bogus test repo
   version: 1.0.0
   x-cortex-git:
