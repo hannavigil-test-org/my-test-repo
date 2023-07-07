@@ -14,3 +14,6 @@ info:
   - url: cortex.yaml
     name: Relative Spec
     type: OPENAPI
+  x-cortex-owners:
+  - type: EMAIL
+    email: hanna.vigil@cortex.io
