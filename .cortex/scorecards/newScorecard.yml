@@ -1,0 +1,23 @@
+tag: another-brand-new-scorecard
+name: Another brand new test scorecard
+draft: false
+ladder:
+  name: Default Ladder
+  levels:
+  - name: level 1
+    rank: 1
+    color: 4144fa
+  - name: level 2
+    rank: 1
+    color: ffffff
+rules:
+- expression: bugsnag = null
+  weight: 1
+  level: level 1
+  filter:
+    category: SERVICE
+- expression: ownership != null
+  weight: 1
+  level: level 2
+  filter:
+    category: SERVICE
