@@ -8,7 +8,7 @@ info:
       repository: hannavigil-test-org/my-test-repo
   x-cortex-tag: my-test-repo
   x-cortex-link:
-  - url: https://github.com/hannavigil-test-org/my-test-repo
+  - url: http://github.com/hannavigil-test-org/my-test-repo
     name: Github Repository
     type: documentation
   - url: cortex.yaml
