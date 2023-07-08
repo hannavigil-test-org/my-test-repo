@@ -1,23 +1,51 @@
-tag: another-my-test-scorecard
+---
 name: Another test scorecard
+tag: another-test-scorecard
+description: >-
+  Test
 draft: false
 ladder:
-  name: Default Ladder
   levels:
-  - name: level 1
-    rank: 1
-    color: 4144fa
-  - name: level 2
-    rank: 1
-    color: ffffff
+    - name: Gold
+      rank: 1
+      description: Excellent
+      color: "#cda400"
+    - name: Silver
+      rank: 1
+      description: Very good
+      color: "#8c9298"
+    - name: Bronze
+      rank: 3
+      description: Pretty good
+      color: "#c38b5f"
 rules:
-- expression: bugsnag = null
-  weight: 1
-  level: level 1
-  filter:
-    category: SERVICE
-- expression: ownership != null
-  weight: 1
-  level: level 2
-  filter:
-    category: SERVICE
+  - title: Ratio of rollbacks to deploys in the last 7 days
+    expression: >+
+      (deploys(lookback=duration("P7D"),types=["ROLLBACK"]).count /
+      deploys(lookback=duration("P7D"),types=["DEPLOY"]).count) > 0.05
+    description: Change Failure Rate
+    weight: 25
+    failureMessage: Less than 95% of deployments in the last 7 days were successful
+    level: Gold
+  - title: Incident was ack'ed within 5 minutes
+    expression: oncall.analysis(lookback = duration("P7D")).meanSecondsToFirstAck <= 300
+    description: MTTA (Mean time to acknowledge)
+    weight: 25
+    failureMessage: Incidents in the last 7 days were not ack'ed
+    level: Silver
+  - title: Last commit was within 24 hours
+    expression: git.lastCommit.freshness <= duration("P1D")
+    description: Lead Time for Changes
+    weight: 25
+    failureMessage: No commits in the last 24 hours
+    level: Bronze
+  - title: Averaging at least one deploy a day in the last 7 days
+    expression: deploys(lookback=duration("P7D"),types=["DEPLOY"]).count >= 7
+    description: Deployment Frequency
+    weight: 25
+    failureMessage: No deployments in the last 7 days
+filter:
+  category: SERVICE
+  query: has_group("production")
+evaluation:
+  window: 4
