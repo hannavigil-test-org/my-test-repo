@@ -6,7 +6,7 @@ info:
   x-cortex-git:
     github:
       repository: hannavigil-test-org/my-test-repo
-  x-cortex-tag: my-test-repo-2
+  x-cortex-tag: my-test-repo
   x-cortex-link:
   - url: http://github.com/hannavigil-test-org/my-test-repo
     name: Github Repository
