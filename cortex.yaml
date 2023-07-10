@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.0
 info:
   title: My Test Repo rename
   description: some bogus test repo
@@ -11,9 +11,6 @@ info:
   - url: http://github.com/hannavigil-test-org/my-test-repo
     name: Github Repository
     type: documentation
-  - url: cortex.yaml
-    name: Relative Spec
-    type: OPENAPI
   x-cortex-owners:
   - type: EMAIL
     email: hanna.vigil@cortex.io
