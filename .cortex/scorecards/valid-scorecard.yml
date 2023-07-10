@@ -10,7 +10,7 @@ ladder:
   levels:
     - name: Gold
       rank: 1
-      description: Excellent
+      description: Excellent desc
       color: "#cda400"
     - name: Silver
       rank: 2
